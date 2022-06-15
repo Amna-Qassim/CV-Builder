@@ -1,10 +1,9 @@
-.ant-btn-primary {
-  background-color: #fe4e4f !important;
+.btnStyle {
+  background-color: #fe4e4f;
   font-size: 16px;
   border: none;
   color: white;
   border-radius: 5px;
-  cursor: pointer;
   height: auto;
-  padding: 0px;
+  padding: 3px 6px;
 }

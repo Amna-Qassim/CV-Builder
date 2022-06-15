@@ -4,6 +4,8 @@ import { Form } from "./pages/Form/Form";
 // import { PersonalForm } from "./components/Forms/PersonalForm";
 // import { SelectSkill } from "./components/Select";
 // import { UploadImage } from "./components/UploadImage";
+// import { AppNew } from "./components/ScrollingPage";
+// import { ScrollingPage } from "./components/ScrollingPage";
 import { Index } from "./pages/mainPage/index";
 
 export const Routers = (props) => {

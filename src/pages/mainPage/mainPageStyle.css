@@ -2,9 +2,9 @@ h1 {
   color: #3c3048;
 }
 
-h3 {
+/* h3 {
   color: #fe4e4f;
-}
+} */
 
 @media screen and (min-width: 320px) {
   h1 {

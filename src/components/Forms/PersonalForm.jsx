@@ -6,6 +6,8 @@ import { InputField } from "../InputField";
 import { TextAreaInput } from "../TextArea";
 import { StepperButtons } from "../ButtonsComponents/StepperButtons";
 import { SelectSkill } from "../SelectSkill";
+import { Transitions } from "../Transision";
+
 // import { UploadImage } from "../UploadImage";
 
 const PersonalInfoSchema = Yup.object().shape({
@@ -22,7 +24,8 @@ const PersonalInfoSchema = Yup.object().shape({
   linkedIn: Yup.string().url("Write Valid Url"),
   gitHub: Yup.string().url("Write Valid Url"),
   position: Yup.string(),
-  select: Yup.array().max(3, "Maximum number of skills are three"),
+  selectSkill: Yup.array().max(6, "Maximum number of skills are six"),
+  selectLanguage: Yup.array().max(6, "Maximum number of languages are six"),
 });
 
 export const PersonalForm = ({ func, personalInfo, next, prev, current }) => {
@@ -75,40 +78,43 @@ export const PersonalForm = ({ func, personalInfo, next, prev, current }) => {
 
   return (
     <div>
-      <Formik
-        initialValues={{
-          fullName: personalInfo.fullName,
-          pio: personalInfo.pio,
-          email: personalInfo.email,
-          phoneNumber: personalInfo.phoneNumber,
-          address: personalInfo.address,
-          linkedIn: personalInfo.linkedIn,
-          gitHub: personalInfo.gitHub,
-          position: personalInfo.position,
-          select: personalInfo.select,
-        }}
-        validationSchema={PersonalInfoSchema}
-        onSubmit={(values) => {
-          // same shape as initial values
-          func(values);
-          console.log("p", values);
-          next();
-        }}
-      >
-        {() => (
-          <Form>
-            <div className="row mx-2">
-              {personalForm.map((input) => {
-                return customerRender(input);
-              })}
-            </div>
-            {/* <div className="d-flex justify-content-start">
+      <Transitions>
+        <Formik
+          initialValues={{
+            fullName: personalInfo.fullName,
+            pio: personalInfo.pio,
+            email: personalInfo.email,
+            phoneNumber: personalInfo.phoneNumber,
+            address: personalInfo.address,
+            linkedIn: personalInfo.linkedIn,
+            gitHub: personalInfo.gitHub,
+            position: personalInfo.position,
+            selectSkill: personalInfo.selectSkill,
+            selectLanguage: personalInfo.selectLanguage,
+          }}
+          validationSchema={PersonalInfoSchema}
+          onSubmit={(values) => {
+            // same shape as initial values
+            func(values);
+            console.log("p", values);
+            next();
+          }}
+        >
+          {() => (
+            <Form>
+              <div className="row mx-2">
+                {personalForm.map((input) => {
+                  return customerRender(input);
+                })}
+              </div>
+              {/* <div className="d-flex justify-content-start">
               <UploadImage />
             </div> */}
-            <StepperButtons prev={prev} current={current} />
-          </Form>
-        )}
-      </Formik>
+              <StepperButtons prev={prev} current={current} />
+            </Form>
+          )}
+        </Formik>
+      </Transitions>
     </div>
   );
 };

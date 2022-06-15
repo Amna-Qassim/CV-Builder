@@ -7,7 +7,8 @@ export const personalInfoState = {
   linkedIn: "https://www.linkedin.com/in/amna-al-ani-280850216/",
   gitHub: "https://github.com/Amna-Qassim",
   position: "front end developer",
-  select: ["Communication", "Searching", "Team Work"],
+  selectSkill: ["Communication", "Searching", "Team Work"],
+  selectLanguage: ["Engilsh", "Arabic", "French"],
 };
 
 export const experienceInfoState = [

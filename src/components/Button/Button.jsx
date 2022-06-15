@@ -1,16 +1,17 @@
 import React from "react";
-import { Button } from "antd";
 import "./buttonStyle.css";
+import { motion } from "framer-motion";
 
 export const CustomButton = (props) => {
   return (
-    <Button
+    <motion.button
+      whileHover={{ scale: 1.1 }}
       onClick={props.onClick}
-      className="text-center mx-2"
-      type="primary"
-      htmlType={props.type}
+      className="text-center mx-2 btnStyle"
+      type={props.type}
+      whileTap={{ scale: 0.9 }}
     >
       {props.text}
-    </Button>
+    </motion.button>
   );
 };

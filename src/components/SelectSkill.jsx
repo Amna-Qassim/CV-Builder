@@ -8,7 +8,7 @@ export const SelectSkill = (props) => {
   const [skill, setSkill] = useState("");
   const skills = values[props.name];
 
-  const SkillFun = () => {
+  const SkillFun = (e) => {
     if (!skill) return;
     setFieldValue(props.name, [...skills, skill]);
     setSkill("");
@@ -21,18 +21,18 @@ export const SelectSkill = (props) => {
   };
 
   return (
-    <div className="my-4">
-      <h2>Skills</h2>
-      <div className="d-flex justify-content-center align-items-center">
+    <div className={`my-4 ${props.col}`}>
+      <h3>{props.title}</h3>
+      <div className="d-flex  align-items-center">
         <input
           value={skill}
           onChange={(e) => {
             setSkill(e.target.value);
           }}
           style={{ width: "500px" }}
-          placeholder="Enter Your Skill"
+          placeholder={`Enter Your ${props.name}`}
         />
-        <CustomButton onClick={SkillFun} text="+" />
+        <CustomButton onClick={SkillFun} type="button" text="+" />
       </div>
       <ErrorMessage
         component="small"

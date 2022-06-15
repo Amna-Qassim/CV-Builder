@@ -19,19 +19,20 @@ export const BasicDocument = ({ dataForm }) => {
     page: {
       backgroundColor: "#fff",
       color: "#000000c4",
-      margin: 10,
+      margin: "0 10",
     },
     name: {
       fontSize: 30,
       color: "red",
       margin: 35,
+      textAlign: "center",
     },
     secondSection: {
       display: "flex",
-      justifyContent: "space-around",
+      justifyContent: "space-between",
       flexDirection: "row",
       fontSize: 14,
-      margin: 15,
+      margin: "15 10",
     },
     contact: {
       display: "flex",
@@ -51,7 +52,8 @@ export const BasicDocument = ({ dataForm }) => {
       marginRight: 8,
     },
     thirdSection: {
-      width: 280,
+      width: 360,
+      margin: "0 auto",
     },
     summaryStyle: {},
     educationStyle: {
@@ -73,12 +75,25 @@ export const BasicDocument = ({ dataForm }) => {
             {/* skills section */}
             <View style={{ marginBottom: 25 }}>
               <Text style={{ marginBottom: 10 }}>Skills</Text>
-              {dataForm.select.map((skill) => {
+              {dataForm.selectSkill.map((skill) => {
                 return (
                   <Text
                     style={{ color: "#636363", fontSize: 12, marginBottom: 5 }}
                   >
                     - {skill}
+                  </Text>
+                );
+              })}
+            </View>
+            {/* languages section */}
+            <View style={{ marginBottom: 25 }}>
+              <Text style={{ marginBottom: 10 }}>Languages</Text>
+              {dataForm.selectLanguage.map((lang) => {
+                return (
+                  <Text
+                    style={{ color: "#636363", fontSize: 12, marginBottom: 5 }}
+                  >
+                    - {lang}
                   </Text>
                 );
               })}

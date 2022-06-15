@@ -48,9 +48,15 @@ export const personalForm = [
     col: "col-lg-6",
   },
   {
-    name: "select",
+    name: "selectSkill",
     title: "Select Your Skilles",
     type: "select",
-    col: "col-12 ",
+    col: "col-6 ",
+  },
+  {
+    name: "selectLanguage",
+    title: "Select Your Languages",
+    type: "select",
+    col: "col-6 ",
   },
 ];
